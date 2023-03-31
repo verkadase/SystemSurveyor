@@ -1,0 +1,48 @@
+name: Package and Release
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  packaging:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Version Number
+        shell: pwsh
+        run: |
+          $version = Get-Date -Format MMddyyyy
+          "VERSION=$version" >> $env:GITHUB_ENV
+      - name: Create Branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: release.${{ env.VERSION }}
+      - uses: actions/checkout@v3
+        with:
+          ref: release.${{ env.VERSION }}
+      - name: Run packaging script
+        shell: pwsh
+        run: |
+          Get-ChildItem './' -File | Remove-Item -Force
+          Get-ChildItem './Element Profiles/' | Move-Item -Destination ./
+          Get-ChildItem -Directory | Remove-Item -Force
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          branch: release.${{ env.VERSION }}
+          tagging_message: Verkada-Element-Profiles-${{ env.VERSION }}
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: Verkada-Element-Profiles-${{ env.VERSION }}
+          name: Verkada-Element-Profiles-${{ env.VERSION }}
+      - name: Delete branch
+        if: always()
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branches: release.${{ env.VERSION }}
