@@ -10,14 +10,17 @@
 	- SV21
 	- SV23
 	- SV25
+	- SV25-128
 	- Injectors and Licenses are accessories
 * [Access Controllers(ACS Controller)](Element%20Profiles/ACS%20Controller-Element_Profile.xlsx)
 	- AC41
+	- AC42
 	- AC62
 	- AX11
 	- Licenses(including doors) and batteries are accessories
 * [Door Readers(Card Reader)](Element%20Profiles/Card%20Reader-Element_Profile.xlsx)
 	- AD32
+	- AD33
 	- Door licenses are accessories
 * [Intercoms(Intercom End Point)](Element%20Profiles/Intercom%20End%20Point-Element_Profile.xlsx)
 	- TD52
