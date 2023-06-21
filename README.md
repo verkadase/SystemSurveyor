@@ -27,7 +27,7 @@
 	- Mounts, injectors, and Licenses(including Desk Station) are accessories
 * [Alarm Hubs(Wirelss Receiver Hub)](Element%20Profiles/Wireless%20Receiver%20Hub-Element_Profile.xlsx)
 	- BH61
-	- Licenses, LTE Module, and wireless sensors/relays are accessories
+	- Licenses, LTE Module, and wireless sensors & relays are accessories
 		- ACC-CEL-LTE
 		- BR31 also available as [Door Contact](Element%20Profiles/Door%20Contact-Element_Profile.xlsx)
 		- BR32 also available as [Motion Detector](Element%20Profiles/Motion%20Detector-Element_Profile.xlsx)
@@ -37,7 +37,7 @@
 		- BX21 also available as [Relay](Element%20Profiles/Relay-Element_Profile.xlsx)
 * [Alarm Panels(IDS Panel)](Element%20Profiles/IDS%20Panel-Element_Profile.xlsx)
 	- BP41
-	- Licenses, LTE Module, and wired sensors/contacts are accessories
+	- Licenses, LTE Module, and wired sensors & contacts are accessories
 		- ACC-CEL-LTE
 		- BR-11
 		- BR-12
