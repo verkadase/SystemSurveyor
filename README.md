@@ -4,6 +4,9 @@
 * [Multi-Sensor Cameras (Multi-Lens Camera)](Element%20Profiles/Multi-Lens%20Camera-Element_Profile.xlsx)
 	- CH52
 	- Mounts, injectors, and Licenses are accessories
+* [PTZ Cameras (PTZ Camera)](Element%20Profiles/PTZ%20Camera-Element_Profile.xlsx)
+	- CP52-E
+	- Mounts, injectors, and Licenses are accessories
 * [Viewing Stations(Video Wall Element)](Element%20Profiles/Video%20Wall-Element_Profile.xlsx)
 	- VX52
 * [Evironment Sensors(General Multi-Sensor Device)](Element%20Profiles/General%20Multi-Sensor%20Device-Element_Profile.xlsx)
@@ -44,7 +47,10 @@
 		- BR-13
 * [Alarm Consoles(IDS Keypad)](Element%20Profiles/IDS%20Keypad-Element_Profile.xlsx)
 	- BC51
-	- Licenses are accessories
+	- BC82
+	- BK11
+	- BK21
+	- Licenses are accessories and LTE Module
 * [Horn Speakers(Alarm Sounder)](Element%20Profiles/Alarm%20Sounder-Element_Profile.xlsx)
 	- BZ11
 	- Licenses are accessories
