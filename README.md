@@ -16,7 +16,8 @@
 	- SV25-128
 	- Injectors and Licenses are accessories
 * [Access Controllers(ACS Controller)](Element%20Profiles/ACS%20Controller-Element_Profile.xlsx)
-	- AC41
+	- AC12
+  	- AC41
 	- AC42
 	- AC62
 	- AX11
