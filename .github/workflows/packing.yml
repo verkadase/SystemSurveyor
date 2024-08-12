@@ -16,7 +16,7 @@ jobs:
           $version = Get-Date -Format MMddyyyy
           "VERSION=$version" >> $env:GITHUB_ENV
       - name: Create Branch
-        uses: peterjgrainger/action-create-branch@v2.0.1
+        uses: peterjgrainger/action-create-branch@v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -31,7 +31,7 @@ jobs:
           Get-ChildItem './Element Profiles/' | Move-Item -Destination ./
           Get-ChildItem -Directory | Remove-Item -Force
       - name: Git Auto Commit
-        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: release.${{ env.VERSION }}
           tagging_message: Verkada-Element-Profiles-${{ env.VERSION }}
