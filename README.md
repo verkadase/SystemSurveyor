@@ -59,3 +59,5 @@
 * [Cellular Gateways(Cellular Communicator)](Element%Profiles/Cellular%Communicator-Element_Profile.xlsx)
   * GC31
   * GC31-E
+* [Wi-Fi Gateways(Wireless Access Point)](Element%Profiles/Wireless%Access%Point-Element_Profile.xlsx)
+  * GW31-E
