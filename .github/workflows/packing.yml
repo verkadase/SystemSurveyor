@@ -27,9 +27,7 @@ jobs:
       - name: Run packaging script
         shell: pwsh
         run: |
-          Get-ChildItem './' -File | Remove-Item -Force
-          Get-ChildItem './Element Profiles/' | Move-Item -Destination ./
-          Get-ChildItem -Directory | Remove-Item -Force
+          Get-ChildItem ./README.md | Remove-Item -Force
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
