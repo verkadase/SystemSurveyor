@@ -20,8 +20,8 @@
   * GC-31
   * GC31-E
 * [Door Position Switch](door_position_switch.xlsx)
-  * Surface Mount
-  * Recessed Mount
+  * BR12
+  * BR13
 * [Elec Lockset](elec_lockset.xlsx)
   * AL54-CY Cylindrical Lock
   * AL54-MS
