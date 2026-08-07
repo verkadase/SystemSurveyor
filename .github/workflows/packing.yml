@@ -6,6 +6,25 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
+  maintenance:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+      - name: Run module maintenance script
+        shell: pwsh
+        run: |
+          Set-PSRepository PSGallery -InstallationPolicy Trusted
+          Install-Module -Name ImportExcel -Force
+          $loc = Get-Location
+          $Env:PSModulePath = $Env:PSModulePath+":$loc"
+          ./maintenance.ps1
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update README
+          branch: main
   packaging:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
@@ -27,9 +46,7 @@ jobs:
       - name: Run packaging script
         shell: pwsh
         run: |
-          Get-ChildItem './' -File | Remove-Item -Force
-          Get-ChildItem './Element Profiles/' | Move-Item -Destination ./
-          Get-ChildItem -Directory | Remove-Item -Force
+          Get-ChildItem ./README.md | Remove-Item -Force
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
