@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Run module maintenance script
         shell: pwsh
         run: |
@@ -21,7 +21,7 @@ jobs:
           $Env:PSModulePath = $Env:PSModulePath+":$loc"
           ./maintenance.ps1
       - name: Git Auto Commit
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update README
           branch: main
@@ -47,6 +47,7 @@ jobs:
         shell: pwsh
         run: |
           Get-ChildItem ./README.md | Remove-Item -Force
+          Get-ChildItem ./maintenance.ps1 | Remove-Item -Force
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
