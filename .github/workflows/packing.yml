@@ -40,7 +40,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: release.${{ env.VERSION }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           ref: release.${{ env.VERSION }}
       - name: Run packaging script
@@ -49,7 +49,7 @@ jobs:
           Get-ChildItem ./README.md | Remove-Item -Force
           Get-ChildItem ./maintenance.ps1 | Remove-Item -Force
       - name: Git Auto Commit
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: release.${{ env.VERSION }}
           tagging_message: Verkada-Element-Profiles-${{ env.VERSION }}
